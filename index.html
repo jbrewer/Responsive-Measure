@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+  <title>Responsive Measure: A jQuery plugin for responsive typography</title>
+
+  <!--<script type="text/javascript" src="//use.typekit.net/doi5ihs.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>-->
+
+  <style type="text/css">
+    * {
+      margin:0;
+      padding:0;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+        html{
+      font-size:1em;
+      line-height:1.5;
+      font-family: "Helvetica Neue";
+    }
+    code,
+    kbd,
+    pre {
+        font-family: monospace, serif;
+        _font-family: 'courier new', monospace;
+        font-size: 1em;
+    }
+
+    pre {
+        white-space: pre;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+    }
+
+    h1,h2,h3,h4,h5,h6,
+    ul,ol,dl,
+    fieldset,
+    p,
+    table,
+    pre,
+    hr{
+      margin-bottom:1.5rem;
+    }
+
+    .mega{
+      font-size:4rem;
+      line-height:1.125;
+    }
+    .kilo{
+      font-size:3.160493827rem;
+      line-height:1;
+    }
+
+    h1,.alpha{
+      font-size:2.37037037rem;
+      line-height:1.333;
+    }
+    h2,.beta{
+      font-size:1.777777778rem;
+      line-height:1.333;
+    }
+    h3,.gamma{
+      font-size:1.333rem;
+      line-height:1.5;
+    }
+    h4,.delta{
+      font-size:1rem;
+      line-height:1.5;
+    }
+    h5,.epsilon{
+      font-size:1rem;
+      line-height:1.5;
+    }
+    h6,.zeta{
+      font-size:1rem;
+      line-height:1.5;
+    }
+    small, .milli {
+      font-size:0.75rem;
+      line-height:1.5;
+    }​
+    body {
+      background: #fafafa;
+      color: #333;
+    }
+    .wrapper {
+      position: relative;
+      width: 80%;
+      margin: 0 10%;
+    }
+    article {
+      width: 50%;
+      margin-left: 50%;
+    }
+    aside {
+      position: absolute;
+      width: 33%;
+      left: 0;
+      top: 3.75rem;
+      font-size: 0.875rem;
+    }
+    aside p:first-child {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    header {
+      margin-top: 4.212938271rem;
+    }
+    h1 span {
+      display: block;
+      font-weight: normal;
+      font-size: 0.5em;
+      margin-bottom: 0.125em;
+    }
+    h1 b {
+      color: #fc0000;
+      display: block;
+      line-height: 1.125;
+      text-transform: uppercase;
+    }
+    h2 {
+      font-weight: normal;
+    }
+    a {
+      color: #333;
+      text-decoration: underline;
+    }
+    .cannon {
+      position: relative;
+      background: #333;
+      width: 100%;
+      height: 10rem;
+    }
+    .line {
+      position: absolute;
+      height: 1px;
+      width: 100%;
+      background: #fff;
+    }
+    aside img {
+      max-width: 100%;
+      margin-bottom: 2em;
+    }
+
+    pre {
+      display: block;
+      padding: 1em 1.5em;
+      margin: 0 0 1.5rem;
+      background-color: #f5f5f5;
+      border: 1px solid #ccc;
+      border: 1px solid rgba(0,0,0,0.15);
+      font-size: 0.75rem;
+      -webkit-border-radius: 4px;
+      -moz-border-radius: 4px;
+      border-radius: 4px;
+      white-space: pre;
+      white-space: pre-wrap;
+      word-break: break-all;
+      word-wrap: break-word;
+    }
+
+    @media screen and (max-width: 40em) {
+      .wrapper {
+        position: relative;
+      }
+      article {
+        width: 100%;
+        margin-left: 0%;
+      }
+      aside {
+        position: static;
+        width: 100%;
+        left: 0;
+        top: 0;
+      }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="wrapper">
+  <article>
+    <header>
+      <h1 class="kilo"><span>Responsive times call for</span> <b>Responsive</b> <b>Measures</b></h1>
+      <h2 class="gamma">Reading is one of the most basic things we do on the web. CSS gives us control over font-size and line-height but we don’t have a good way to control the measure. <strong>Until now.</strong></h2>
+    </header>
+    <aside>
+      <p>A jQuery plugin for generating a responsive ideal measure.</p>
+      <p><a href="">Download at Github</a></p>
+      <img src="img/cannon.png" alt="">
+    </aside>
+    <section id="arm">
+      <p>Responsive Measure is a simple script that allows you to pass in a selector (ideally the container where your primary content will go) which generates the ideal font size needed to produce the ideal measure for your text.</p>
+      <pre>
+$('article').responsiveMeasure({
+  // Variables you can pass in:
+  idealLineLength: (defaults to 66)
+  minimumFontSize: (defaults to 16)
+  maximumFontSize: (defaults to 300)
+  ratio: (defaults to 4/3)
+});</pre>
+
+      <p>It also has the ability to generate a resolution independent font-scale based on the ideal font-size.</p>
+      <pre>
+$(document).on('responsiveMeasureUpdated', function(e, data) {
+  $('.giga').css('fontSize', data.fontRatios[9] + 'px');
+  $('h1').css('fontSize', data.fontRatios[8] + 'px');
+  $('h2').css('fontSize', data.fontRatios[7] + 'px');
+  $('h3').css('fontSize', data.fontRatios[6] + 'px');
+  $('p').css('fontSize', data.fontRatios[5] + 'px');
+  $('aside, small').css('fontSize', data.fontRatios[4] + 'px');
+});</pre>
+
+
+    </section>
+    <footer class="milli">
+      <p><span class="clear"><a href="mailto:feedback@ffffallback.com">Questions, comments &amp; feedback</a><span> · </span><a href="https://github.com/jbrewer/responsive_measure">Fork it on Github</a></span>
+      Handcrafted by <a href="http://twitter.com/jbrewer">@<span>jbrewer</span></a> and <a href="http://twitter.com/shinypb">@<span>shinypb</span></a>, with love, in San Francisco.</p>
+    </footer>
+  </article>
+  </div>
+  <script src="js/jquery.js"></script>
+  <script src="js/jquery.rm.js"></script>
+
+  <script type="text/javascript">
+
+    $('#arm').responsiveMeasure({
+      idealLineLength: 60,
+      ratio: 4/3,
+      minimumFontSize: 16,
+      sampleText: "n"
+    });
+
+  </script>
+</body>
+</html>
