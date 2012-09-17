@@ -6,7 +6,7 @@ Responsive-Measure
 A jQuery-based script for automatically creating responsive measure that 
 
 ## Getting Started
-Download the [production version]: https://raw.github.com/jbrewer/Responsive-Measure/master/dist/jquery.rm.js
+Download the file: https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js
 
 In your web page:
 
@@ -33,7 +33,6 @@ In your web page:
     });
 
   </script>
-
 ```
 
 ### Extended feature(s)
@@ -50,6 +49,7 @@ $(document).on('responsiveMeasureUpdated', function(e, data) {
 	$('h3').css('fontSize', (data.fontRatios[6] / data.idealFontSize) + 'rem');
 	$('aside, small').css('fontSize', (data.fontRatios[4] / data.idealFontSize) + 'rem');
 });
+```
 
 ## Documentation
 _(Coming soon)_

@@ -1,7 +1,6 @@
-/**
- * ARM: Automatic Responsive Measure
- * http://responsivemeasure.com
- * http://github.com/jbrewer/arm
+/*
+ * Responsive Measure
+ * http://github.com/jbrewer/Responsive-Measure
  *
  * August 2012
  *
@@ -10,9 +9,9 @@
  * @author Mark Christian http://markchristian.org/
  * @license MIT
  *
- * ARM is a simple script that allows you to pass in a selector (ideally the container *
- * where your primary content will go) and based on that, finds the ideal font size to
- * give you the best measure and then affect your overall design.
+ * Responsive Measure is a simple script that allows you to pass in a selector (ideally the
+ * container where your primary content will go) and based on that, finds the ideal font
+ * size to give you the best measure and then affect your overall design.
  * Ideally, it is a resolution independent font-scale based on the ideal font size needed
  * to render your ideal measure.
  *
