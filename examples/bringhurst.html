@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+  <title>ARM: Automatic Responsive Measure</title>
+  <script type="text/javascript" src="//use.typekit.net/qwr6hun.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="wrapper">
+  <article class="full grid">
+    <header>
+      <small class="subhead">Wise words from Robert Bringhurst</small>
+      <h1>Choose a comfortable measure</h1>
+    </header>
+    <section>
+      <p id="arm">Anything from 45 to 75 characters is widely regarded as a satisfactorily length of line for a single-column page set in a serifed text face in a text size. The 66-character line (counting both letters and space) is widely regarded as ideal. For multiple-column work, a better average is 40 to 50 characters. </p>
+      <p>If the type is well set and printed, lines of 85 or 90 characters will pose no problem in discontinuous texts, such as bibliographies, or, with generous leading, in footnotes. But even with generous leading, a line that averages more than 75 or 80 characters is likely to be too long for continuous reading. </p>
+      <!-- <aside><p>When the counters of the letterforms themselves are elastic, justification can be carried to greater extremes.</p></aside> -->
+      <p>A reasonable working minimum for justified text in English is the 40-character line. Shorter lines may compose perfectly well with sufficient luck and patience, but in the long run, justified lines averaging less than 38 or 40 characters will lead to white acne or pig bristles:</p>
+      <figure>
+        <img src="pig.jpg" alt="" />
+      </figure>
+    </section>
+    <section>
+      <p>When the line is short, the text should be set ragged right. In large doses, even ragged-right composition may look anorexic if the line falls below 30 characters, but in small and isolated patches &ndash; ragged marginal notes, for example &ndash; the minimum line (if the language is English) can be as little as 12 or 15 characters.</p>
+      <p>These line lengths are in every case averages, and they include empty spaces and punctuation as well as letters. The simplest way of computing them is with a copy-fitting table. Measure the length of the basic lowercase alphabet &ndash; abcdefghijklmnopqrstuvwxyz &ndash; in any face and size you are considering, and the table will tell you the average number of characters to expect on a given line. In most text faces, the 10 pt roman alphabet will run between 120 and 140 points in length, but a 10 pt italic alphabet might be 100 points long or even less, while a 10 pt bold might run to 160. The 12 pt alphabet is, of course, about 1.2 times the length of the 10 pt alphabet — but not exactly so unless it is generated from the same master design and the letter-fit is unchanged.</p>
+      <p>On a conventional book page, the measure, or length or line, is usually around 30 times the size of the type, but lines as little as 20 or as much as 40 times the type size fall within the expectable range. If, for example, the type size is 10 pt, the measure might be around 30 x 10 = 300 pt, which is 300/12 = 25 picas. A typical lowercase alphabet length for a 10 pt text font is 128 pt, and the copy-fitting table tells us that such a font set to a 25-pica measure will yield roughly 65 characters per line.</p>
+    </section>
+  </article>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="../jquery.rm.js"></script>
+  <script type="text/javascript">
+
+    $(document).on('responsiveMeasureUpdated', function(e, data) {
+      // data.fontRatios returns an array of font-sizes based on the ideal font size and a ratio you pass in (default is 4/3)
+      // you can assign the values to elements or classes on the fly or you can just set up this typographic scale in your CSS with rem's and be good to go
+      //$('.giga').css('fontSize', (data.fontRatios[9] / data.idealFontSize) + 'rem');
+      //$('h1').css('fontSize', (data.fontRatios[8] / data.idealFontSize) + 'rem');
+      //$('h2').css('fontSize', (data.fontRatios[7] / data.idealFontSize) + 'rem');
+      //$('h3').css('fontSize', (data.fontRatios[6] / data.idealFontSize) + 'rem');
+      //// data.fontRatios[5] = data.idealFontSize -> this is what gets written to the html element so no need to actually declare it
+      //$('aside, small').css('fontSize', (data.fontRatios[4] / data.idealFontSize) + 'rem');
+    });
+
+    $('#arm').responsiveMeasure({
+      //  Variables you can pass in:
+      //  idealLineLength: (defaults to 66)
+      //  minimumFontSize: (defaults to 16)
+      //  maximumFontSize: (defaults to 300)
+      //  ratio: (defaults to 4/3)
+      //  scaleIncrements: (defaults to 6 — this is the number of steps this will go up and down from your ideal Font Size to create a typographical scale)
+      //  sampleText: "Four score and seven years ago, our forefathers were actually five *"
+
+      ratio: 4/3,
+      minimumFontSize: 16,
+      sampleText: "n"   // I found that 'n' acutally gives you the most acurate measure (it varies a lot) — you can put an actual string of your text or whatever you want, and we have a default as well
+
+    });
+
+    $(document).keypress(function(event){
+      // make grid toggling easy, shift+g toggles the grids
+      var keycode = (event.keyCode ? event.keyCode : event.which);
+      if(keycode == '71'){
+        $('.grid-toggle').toggleClass('off');
+        $('#grid').toggle();
+    }
+
+});
+
+  </script>
+</body>
+</html>
