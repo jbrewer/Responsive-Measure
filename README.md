@@ -4,7 +4,7 @@ Responsive-Measure
 A jQuery-based script for automatically creating responsive measure that 
 
 ## Getting Started
-Download the file: https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js
+Download the [`javascript`]:https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js
 
 In your web page:
 
@@ -15,20 +15,13 @@ In your web page:
 
   <script type="text/javascript">
 
-    $('section').responsiveMeasure({
-			 maximumFontSize: (defaults to 300),
-
-      // good chance you don't want the the text going below a certain size
-      minimumFontSize: 16,
-
-      // you can pass in any ratio you like
-      ratio: 4/3,
-
-      // I found that 'n' acutally gives you the most acurate measure (it varies a lot) — or you can put an actual string of your text or whatever you want, and we have a default as well
-      sampleText: "Four score and seven years ago, our forefathers were actually five"
-			// this is the number of steps this will go up and down from your ideal Font Size to create a typographical scale (see Extended Features)
-			scaleIncrements: (defaults to 6)
-    });
+  	$('section').responsiveMeasure({
+			// Variables you can pass in:
+			idealLineLength: (defaults to 66),
+			minimumFontSize: (defaults to 16),
+			maximumFontSize: (defaults to 300),
+			ratio: (defaults to 4/3)
+		});
 
   </script>
 ```
@@ -39,13 +32,12 @@ This plugin includes a feature for generating a typographic scale that you can a
 
 ```html
 $(document).on('responsiveMeasureUpdated', function(e, data) {
-	// data.fontRatios returns an array of font-sizes based on the ideal font size and a ratio you pass in (default is 4/3)
-  // you can assign the values to elements or classes on the fly
-	$('.giga').css('fontSize', (data.fontRatios[9] / data.idealFontSize) + 'rem');
-	$('h1').css('fontSize', (data.fontRatios[8] / data.idealFontSize) + 'rem');
-	$('h2').css('fontSize', (data.fontRatios[7] / data.idealFontSize) + 'rem');
-	$('h3').css('fontSize', (data.fontRatios[6] / data.idealFontSize) + 'rem');
-	$('aside, small').css('fontSize', (data.fontRatios[4] / data.idealFontSize) + 'rem');
+	$('.giga').css('fontSize', data.fontRatios[9] + 'px');
+	$('h1').css('fontSize', data.fontRatios[8] + 'px');
+	$('h2').css('fontSize', data.fontRatios[7] + 'px');
+	$('h3').css('fontSize', data.fontRatios[6] + 'px');
+	$('p').css('fontSize', data.fontRatios[5] + 'px');
+	$('.sm').css('fontSize', data.fontRatios[4] + 'px');
 });
 ```
 
@@ -54,7 +46,7 @@ _(Coming soon)_
 
 ## Examples
 
-Check out the [`examples`](http://jbrewer.github.com/Responsive-Measure/examples) directory for samples of the plugin in use.directory for examples.
+Check out the [`examples`](http://jbrewer.github.com/Responsive-Measure/examples) directory for samples of the plugin in use.
 
 ## Release History
 _(Nothing yet)_
