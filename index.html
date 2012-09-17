@@ -25,20 +25,7 @@
         html{
       font-size:1em;
       line-height:1.5;
-      font-family: "Helvetica Neue";
-    }
-    code,
-    kbd,
-    pre {
-        font-family: monospace, serif;
-        _font-family: 'courier new', monospace;
-        font-size: 1em;
-    }
-
-    pre {
-        white-space: pre;
-        white-space: pre-wrap;
-        word-wrap: break-word;
+      font-family: Helmet, Freesans, sans-serif;
     }
 
     h1,h2,h3,h4,h5,h6,
@@ -162,11 +149,7 @@
       -webkit-border-radius: 4px;
       -moz-border-radius: 4px;
       border-radius: 4px;
-      overflow: hidden;
-/*      white-space: pre;
-      white-space: pre-wrap;
-      word-break: break-all;
-      word-wrap: break-word;*/
+      overflow: auto;
     }
 
     @media screen and (max-width: 40em) {
@@ -196,8 +179,8 @@
     </header>
     <aside>
       <p>A jQuery plugin for generating a responsive ideal measure.</p>
-      <p><a href="">Download at Github</a></p>
-      <img src="img/cannon.png" alt="">
+      <p><a href="https://github.com/jbrewer/Responsive-Measure/">Download at Github</a></p>
+      <img src="img/cannon.png" alt="" />
     </aside>
     <section id="arm">
       <p>Responsive Measure is a simple script that allows you to pass in a selector (ideally the container where your primary content will go) which generates the ideal font size needed to produce the ideal measure for your text.</p>
@@ -212,18 +195,19 @@ $('article').responsiveMeasure({
 
       <p>It also has the ability to generate a resolution independent font-scale based on the ideal font-size.</p>
       <pre>$(document).on('responsiveMeasureUpdated', function(e, data) {
-$('.giga').css('fontSize', data.fontRatios[9] + 'px');
-$('h1').css('fontSize', data.fontRatios[8] + 'px');
-$('h2').css('fontSize', data.fontRatios[7] + 'px');
-$('h3').css('fontSize', data.fontRatios[6] + 'px');
-$('p').css('fontSize', data.fontRatios[5] + 'px');
-$('.sm').css('fontSize', data.fontRatios[4] + 'px');
+  $('.giga').css('fontSize', data.fontRatios[9] + 'px');
+  $('h1').css('fontSize', data.fontRatios[8] + 'px');
+  $('h2').css('fontSize', data.fontRatios[7] + 'px');
+  $('h3').css('fontSize', data.fontRatios[6] + 'px');
+  $('p').css('fontSize', data.fontRatios[5] + 'px');
+  $('.sm').css('fontSize', data.fontRatios[4] + 'px');
 });</pre>
 
+    <p>Check out the <a href="http://jbrewer.github.com/Responsive-Measure/examples">examples</a> to see the plugin in action.</p>
 
     </section>
     <footer class="milli">
-      <p><span class="clear"><a href="mailto:feedback@ffffallback.com">Questions, comments &amp; feedback</a><span> · </span><a href="https://github.com/jbrewer/responsive_measure">Fork it on Github</a></span>
+      <p><span class="clear"><a href="mailto:feedback@responsivemeasure.com">Questions, comments &amp; feedback</a><span> · </span><a href="https://github.com/jbrewer/Responsive-Measure/">Fork it on Github</a></span>
       Handcrafted by <a href="http://twitter.com/jbrewer">@<span>jbrewer</span></a> and <a href="http://twitter.com/shinypb">@<span>shinypb</span></a>, with love, in San Francisco.</p>
     </footer>
   </article>
