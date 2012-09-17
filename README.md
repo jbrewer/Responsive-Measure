@@ -11,17 +11,15 @@ In your web page:
 ```html
 <script src="jquery.js"></script>
 <script src="jquery.rm.js"></script>
-<link href="src/typographic_scale.css" rel="stylesheet">
-
-  <script type="text/javascript">
-
-  	$('section').responsiveMeasure({
-			// Variables you can pass in:
-			idealLineLength: (defaults to 66),
-			minimumFontSize: (defaults to 16),
-			maximumFontSize: (defaults to 300),
-			ratio: (defaults to 4/3)
-		});
+<script type="text/javascript">
+	
+$('section').responsiveMeasure({
+	// Variables you can pass in:
+	idealLineLength: (defaults to 66),
+	minimumFontSize: (defaults to 16),
+	maximumFontSize: (defaults to 300),
+	ratio: (defaults to 4/3)
+});
 
   </script>
 ```
