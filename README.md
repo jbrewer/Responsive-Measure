@@ -1,8 +1,6 @@
 Responsive-Measure
 ==================
 
-# Automatic Responsive Measure
-
 A jQuery-based script for automatically creating responsive measure that 
 
 ## Getting Started
