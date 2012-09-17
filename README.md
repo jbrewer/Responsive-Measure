@@ -1,7 +1,7 @@
 Responsive-Measure
 ==================
 
-A jQuery-based script for automatically creating responsive measure that 
+A jQuery plugin for generating a responsive ideal measure.
 
 ## Getting Started
 Download the [`javascript`]:https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js
