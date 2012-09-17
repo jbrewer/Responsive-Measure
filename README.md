@@ -4,7 +4,7 @@ Responsive-Measure
 A jQuery plugin for generating a responsive ideal measure.
 
 ## Getting Started
-Download the [`javascript`]:(https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js)
+Download the [`javascript`](https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js)
 
 In your web page:
 
