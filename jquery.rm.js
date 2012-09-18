@@ -82,8 +82,6 @@
 
       scale.push(baseSize * multiplier);
     }
-    console.log("idealFontSize", baseSize)
-    console.log("scale", scale)
     return scale;
   }
 
@@ -144,7 +142,6 @@
       if (new Date - lastUpdateTime < minimumUpdateDelay) {
         //  It's been less than minimumUpdateDelay milleseconds since the last time we updated;
         //  wait a while so we don't overwhelm the browser.
-        console.log('too soon');
         if (!nextUpdateTimer) {
           nextUpdateTimer = setTimeout(function() {
             nextUpdateTimer = null;
