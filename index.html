@@ -22,7 +22,7 @@
       -webkit-box-sizing: border-box;
       box-sizing: border-box;
     }
-        html{
+    html{
       font-size:1em;
       line-height:1.5;
       font-family: Helmet, Freesans, sans-serif;
@@ -76,7 +76,6 @@
       line-height:1.5;
     }​
     body {
-      background: #fafafa;
       color: #333;
     }
     .wrapper {
@@ -121,17 +120,11 @@
       color: #333;
       text-decoration: underline;
     }
-    .cannon {
-      position: relative;
-      background: #333;
-      width: 100%;
-      height: 10rem;
+    a:hover {
+      color: #111;
     }
-    .line {
-      position: absolute;
-      height: 1px;
-      width: 100%;
-      background: #fff;
+    a:visited {
+      color: #555;
     }
     aside img {
       max-width: 100%;
@@ -155,6 +148,8 @@
     @media screen and (max-width: 40em) {
       .wrapper {
         position: relative;
+        width: 92%;
+        margin: 0 4%;
       }
       article {
         width: 100%;
@@ -220,7 +215,7 @@ $('article').responsiveMeasure({
     $('#arm').responsiveMeasure({
       idealLineLength: 60,
       ratio: 4/3,
-      minimumFontSize: 16,
+      minimumFontSize: 14,
       sampleText: "n"
     });
 
