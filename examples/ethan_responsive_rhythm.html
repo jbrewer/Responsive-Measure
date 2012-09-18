@@ -168,10 +168,20 @@ p+p {
     <p>&#8220;Very right too.&#8221;</p>
 </div><!-- /end .article -->
 
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.min.js"></script>
-  <script src="../js/jquery.rm.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
+  <script src="https://raw.github.com/jbrewer/Responsive-Measure/master/jquery.rm.js"></script>
 
   <script type="text/javascript">
+      $(document).on('responsiveMeasureUpdated', function(e, data) {
+      // data.fontRatios returns an array of font-sizes based on the ideal font size and a ratio you pass in (default is 4/3)
+      // you can assign the values to elements or classes on the fly or you can just set up this typographic scale in your CSS with rem's and be good to go
+      //$('.giga').css('fontSize', (data.fontRatios[9] / data.idealFontSize) + 'rem');
+      //$('h1').css('fontSize', (data.fontRatios[8] / data.idealFontSize) + 'rem');
+      //$('h2').css('fontSize', (data.fontRatios[7] / data.idealFontSize) + 'rem');
+      //$('h3').css('fontSize', (data.fontRatios[6] / data.idealFontSize) + 'rem');
+      //// data.fontRatios[5] = data.idealFontSize -> this is what gets written to the html element so no need to actually declare it
+      //$('aside, small').css('fontSize', (data.fontRatios[4] / data.idealFontSize) + 'rem');
+    });
     $('#arm').responsiveMeasure({
       idealLineLength: 80,
       ratio: 4/3,
@@ -179,21 +189,6 @@ p+p {
       sampleText: "n"   // I found that 'n' acutally gives you the most acurate measure (it varies a lot) — you can put an actual string of your text or whatever you want, and we have a default as well
 
     });
-
-    $('.grid-toggle').click(function(e) {
-      e.preventDefault();
-      $(this).toggleClass('off');
-      $('#grid').toggle();
-    });
-    $(document).keypress(function(event){
-      // make grid toggling easy, shift+g toggles the grids
-      var keycode = (event.keyCode ? event.keyCode : event.which);
-      if(keycode == '71'){
-        $('.grid-toggle').toggleClass('off');
-        $('#grid').toggle();
-    }
-
-});
 
   </script>
 </body>
