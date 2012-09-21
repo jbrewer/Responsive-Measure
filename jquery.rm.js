@@ -16,8 +16,8 @@
  * to render your ideal measure.
  *
  */
-'use strict';
 (function($) {
+  'use strict';
 
   function calculateIdealLineLength() {
     //  Set to Bringhurst's recommendation for an ideal measure
