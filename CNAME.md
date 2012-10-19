@@ -1,1 +1,0 @@
-responsivemeasure.com
