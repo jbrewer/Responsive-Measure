@@ -123,7 +123,14 @@
     var fontRatios = fontRatiosForFontSize(idealFontSize, opts.ratio, opts.scaleIncrements, opts.minimumFontSize);
 
     var $docElement = $(document.documentElement);
-    $docElement.css('font-size', idealFontSize + 'px');
+
+    if (opts.target) {
+      var $targetElement = $(opts.target);
+    } else {
+      var $targetElement = $docElement;
+    }
+
+    $targetElement.css('font-size', idealFontSize + 'px');
     $docElement.trigger('responsiveMeasureUpdated', {
       idealFontSize: idealFontSize,
       fontRatios: fontRatios
