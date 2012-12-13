@@ -12,7 +12,7 @@ In your web page:
 <script src="jquery.js"></script>
 <script src="jquery.rm.js"></script>
 <script type="text/javascript">
-	
+
 $('section').responsiveMeasure({
 	// Variables you can pass in:
 	idealLineLength: (defaults to 66),
@@ -26,7 +26,7 @@ $('section').responsiveMeasure({
 
 ### Extended feature(s)
 
-This plugin includes a feature for generating a typographic scale that you can apply automagically on resize. 
+This plugin includes a feature for generating a typographic scale that you can apply automagically on resize.
 
 ```html
 $(document).on('responsiveMeasureUpdated', function(e, data) {
@@ -44,11 +44,11 @@ _(Coming soon)_
 
 ## Examples
 
-Check out the [`examples`](http://jbrewer.github.com/Responsive-Measure/examples) directory for samples of the plugin in use.
+Check out the [`examples`](http://responsivemeasure.com/examples/) of the plugin in use.
 
 ## Release History
 _(Nothing yet)_
 
 ## License
-Copyright (c) 2012 Josh Brewer  
+Copyright (c) 2012 Josh Brewer
 Licensed under the MIT, GPL licenses.
