@@ -16,8 +16,8 @@
  * to render your ideal measure.
  *
  */
-'use strict';
 (function($) {
+  'use strict';
 
   function calculateIdealLineLength() {
     //  Set to Bringhurst's recommendation for an ideal measure
@@ -101,14 +101,14 @@
       return;
     } else if(this.length != 1) {
       //  Too many elements
-      console.log("responsiveMeasure must be applied with a selector that matches only one element.");
+      throw new Error("responsiveMeasure must be applied with a selector that matches only one element.");
       return;
     }
 
     var $element = this;
     var idealLineLength = typeof(opts.idealLineLength) == 'function' ? opts.idealLineLength.call(this, $element) : parseInt(opts.idealLineLength, 10);
     if (idealLineLength == 0) {
-      console.warn("responsiveMeasure was given an ideal line length of 0; this doesn't make any sense. Doing nothing.");
+      throw new Error("responsiveMeasure was given an ideal line length of 0; this doesn't make any sense. Doing nothing.");
       return;
     }
 
