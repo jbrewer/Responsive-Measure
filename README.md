@@ -1,3 +1,6 @@
+_This plugin is no longer supported. Leaving things up so I don't cause more link rot._
+
+
 Responsive-Measure
 ==================
 
