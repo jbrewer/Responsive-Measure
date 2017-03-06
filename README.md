@@ -42,16 +42,6 @@ $(document).on('responsiveMeasureUpdated', function(e, data) {
 });
 ```
 
-## Documentation
-_(Coming soon)_
-
-## Examples
-
-Check out the [`examples`](http://responsivemeasure.com/examples/) of the plugin in use.
-
-## Release History
-_(Nothing yet)_
-
 ## License
 Copyright (c) 2012 Josh Brewer
 Licensed under the MIT, GPL licenses.
